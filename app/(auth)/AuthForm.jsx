@@ -1,13 +1,15 @@
-"use client"
-
-import { useState } from 'react'
+"use strict";
+import { useState } from 'react';
 
 export default function AuthForm({ handleSubmit }) {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
-    <form onSubmit={(e) => handleSubmit(e, email, password)}>
+    <form 
+      onSubmit={(e) => handleSubmit(e, email, password)}
+      style={{ backgroundColor: '#D6E4FF' }} // Change form color here
+    >
       <label>
         <span>Email:</span>
         <input 
@@ -26,7 +28,12 @@ export default function AuthForm({ handleSubmit }) {
           required 
         />
       </label>
-      <button className="btn-primary">Submit</button>
+      <button 
+        className="btn-primary"
+        style={{ backgroundColor: '1D3557' }} // Change button color here
+      >
+        Submit
+      </button>
     </form>
-  )
+  );
 }
